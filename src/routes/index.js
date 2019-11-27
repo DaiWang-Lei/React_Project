@@ -8,7 +8,7 @@ import {
 } from '../views'
 
 
-export const mainRouter = [{
+export const mainRoutes = [{
   pathname: '/404',
   component: NotFound
 },
@@ -17,21 +17,34 @@ export const mainRouter = [{
   component: Login
 }]
 
-export const adminRouter = [
+export const adminRoutes = [
   {
     pathname: '/admin/dashboard',
-    component: DashBoard
-  },
-  {
-    pathname: '/admin/settings',
-    component: Settings
+    component: DashBoard,
+    title: '仪表盘',
+    isNav: true,
+    icon:'dashboard'
   },
   {
     pathname: '/admin/article',
     component: ArticleList,
-    exact:true
+    exact: true,
+    title: '文章列表',
+    isNav: true,
+    icon:'unordered-list'
+
+
   },
   {
     pathname: '/admin/article/edit/:id',
     component: ArticleEdit
+  },
+  {
+    pathname: '/admin/settings',
+    component: Settings,
+    title: '设置',
+    isNav: true,
+    icon:'setting'
+
+
   }]

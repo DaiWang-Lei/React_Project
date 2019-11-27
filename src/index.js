@@ -7,10 +7,10 @@ import App from './App'
 import zhCN from 'antd/es/locale/zh_CN';
 import { ConfigProvider } from 'antd'
 
-
+import './index.less'
 // d导入路由
 import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom'
-import { mainRouter } from './routes'
+import { mainRoutes } from './routes'
 
 render(
 
@@ -22,7 +22,7 @@ render(
           return <App {...routerProps} />
         }} />
         {
-          mainRouter.map(route => {
+          mainRoutes.map(route => {
       
             return <Route key={route.pathname} path={route.pathname} component={route.component}/>
           })
