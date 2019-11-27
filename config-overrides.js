@@ -6,7 +6,8 @@
 
 
 // 引入一些相关的方法
-const { override, fixBabelImports, addLessLoader } = require('customize-cra');
+// addDecoratorsLegacy是装饰器模式
+const { override, fixBabelImports, addLessLoader,addDecoratorsLegacy } = require('customize-cra');
 // 引入主题文件
 const theme = require('./theme')
 module.exports = override(
@@ -19,4 +20,5 @@ module.exports = override(
     javascriptEnabled: true,
     modifyVars: theme,
   }),
+  addDecoratorsLegacy()
 );

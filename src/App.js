@@ -1,7 +1,24 @@
 import React, { Component } from 'react'
-import { Button, Steps,Pagination } from 'antd';
-const { Step } = Steps
-export default class App extends Component {
+import { Button } from 'antd';
+
+
+const High = (YourComponent) => {
+  return (
+    class Zujian extends Component {
+      render() {
+        return (
+          <>
+            <YourComponent></YourComponent>
+            <div>我是高阶组件</div>
+          </>
+        )
+      }
+    }
+  )
+}
+@High
+
+class App extends Component {
   render() {
     return (
       <div>
@@ -10,3 +27,4 @@ export default class App extends Component {
     )
   }
 }
+export default App
